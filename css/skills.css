@@ -1,5 +1,5 @@
 .wrap{
-  max-width: 960px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   padding: 0 20px;
@@ -44,8 +44,8 @@
 .row ul li.jquery div span { width: 30%; background: #1e69aa; }
 
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }.fadeInLeft {
