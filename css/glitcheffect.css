@@ -1,0 +1,17 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+
+.glitch{
+  background: black;
+}
+
+svg{
+  width: 80%;
+  display: block;
+  position: relative;
+  overflow: hidden; 
+  margin: 0 auto;
+  background: black;
+}
