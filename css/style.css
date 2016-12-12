@@ -51,6 +51,9 @@ h1{
 .socialinks{
 	text-align: center;
 }
+.fproyecto{
+	margin-bottom: 30px;
+}
 @media all and (max-width: 600px) {
 	.image-swap{
 		text-align: center;
