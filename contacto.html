@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="description" content="" />
     <title>CS Terminal</title>
-
     <!-- css -->
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
@@ -19,7 +18,6 @@
     <div class="scanline"></div>
 <div class="wrapper">
 <div class="content clearfix">
-
         <header class="site clearfix">
         <div class="col one">
             <img src="img/Logo-terminal.jpg" alt="591 Industries" width="740" height="729" id="logo-v" />
@@ -32,46 +30,26 @@
                 <p>- Server 591 -</p>
             </div>
         </header>
-
         <nav class="site clear">
             <ul>
                 <li><a href="index.html" title="">Regresar a Inicio</a></li>
             </ul>
         </nav>
-
         <p>Sistema integrado de mensajes al administrador del sistema (CS)</p>
         <p>Administrador de Sistema - Camila Solis</p>
 
         <p class="clear"><br /></p>
 
         <p>Bienvenido al Sistema Integrado de Mensajes al Administrador del Sistema (CS). Rellene los campos a continuación y presione el botón ENVIAR. El administrador del sistema (CS) responderá a su consulta en breve. Gracias por ponerse en contacto con la oficina del administrador del sistema.</p><br />
-        <?php
-            if (!isset($_POST['email'])) {
-                ?>
-                <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-                    <label>Nombre >></label><input name="nombre" type="text" /><br />
-                    <label>Email >></label><input name="email" type="text" /><br />
-                    <label>Asunto >></label><input name="asunto" type="text" /><br />
-                    <label>Mensaje >></label><textarea name="mensaje" id="text" rows="1"></textarea><br /><br /><br />
-                    <input type="submit" value="Enviar" />
-                    <a class="button" alt="" href="index.html">Cancelar</a>
-                </form>
-                <?php
-            } else {
-                $mensaje="Mensaje del formulario de contacto de nnatali.com";
-  $mensaje.= "\nNombre: ". $_POST['nombre'];
-  $mensaje.= "\nEmail: ".$_POST['email'];
-  $mensaje.= "\nAsunto: ". $_POST['asunto'];
-  $mensaje.= "\nMensaje: \n".$_POST['mensaje'];
-  $destino= "camila.s.diseno@gmail.com";
-  $remitente = $_POST['email'];
-  $asunto = "Mensaje enviado por: ".$_POST['nombre'];
-  mail($destino,$asunto,$mensaje,"FROM: $remitente");
-?>
-  <p><strong>Mensaje enviado.</strong></p>
-<?php
-            }
-            ?>
+
+        <form action="formulario.php" method="post">
+            <label>Nombre >></label><input name="name" type="text" /><br />
+            <label>Email >></label><input name="email" type="text" /><br />
+            <label>Asunto >></label><input name="affair" type="text" /><br />
+            <label>Mensaje >></label><textarea name="message" id="text" rows="1"></textarea><br /><br /><br />
+            <input type="submit" value="Enviar" />
+            <a class="button" alt="" href="index.html">Cancelar</a>
+        </form>
     </div>
 </div>
 <script type="text/javascript" src="js/contacto.js"></script>

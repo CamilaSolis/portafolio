@@ -1,39 +1,19 @@
 <?php
-if (!isset($_POST['email'])) {
-?>
-  <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-    <label>
-      Nombre:
-      <input name="nombre" type="text" />
-    </label>
-    <label>
-      Teléfono:
-      <input name="telefono" type="text" />
-    </label>
-    <label>
-      Email:
-      <input name="email" type="text" />
-    </label>
-    <label>
-      Mensaje:
-      <textarea name="mensaje" rows="6" cols="50"></textarea>
-    </label>
-    <input type="reset" value="Borrar" />
-    <input type="submit" value="Enviar" />
-  </form>
-<?php
-}else{
-  $mensaje="Mensaje del formulario de contacto de nnatali.com";
-  $mensaje.= "\nNombre: ". $_POST['nombre'];
-  $mensaje.= "\nEmail: ".$_POST['email'];
-  $mensaje.= "\nTelefono: ". $_POST['telefono'];
-  $mensaje.= "\nMensaje: \n".$_POST['mensaje'];
-  $destino= "camila.s.diseno@gmail.com";
-  $remitente = $_POST['email'];
-  $asunto = "Mensaje enviado por: ".$_POST['nombre'];
-  mail($destino,$asunto,$mensaje,"FROM: $remitente");
-?>
-  <p><strong>Mensaje enviado.</strong></p>
-<?php
-}
+  error_reporting(0);
+  $name=$_POST['name'];
+  $email=$_POST['email'];
+  $affair=$_POST['affair'];
+  $message=$_POST['message'];
+
+  $mensaje .= "Este mansage fue enviado por" .$name . " \r\n";
+  $mensaje .= "Su e-mail es: " .$email . " \r\n";
+  $mensaje .="Por motivo de: " .$affair . " \r\n";
+  $mensaje .="Y su mensaje es: " .$message . " \r\n";
+  $mensaje .= "Enviado el " . date('d/m/Y', time());
+
+  $para = 'camila.s.diseno@gmail.com';
+  $asunto = 'Correo de la pagina portafolio';
+
+  mail($para, $asunto, utf8_decode($mensaje));
+  echo 'Mensaje enviado correctamente';
 ?>
