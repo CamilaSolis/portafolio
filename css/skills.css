@@ -5,18 +5,21 @@
   padding: 0 20px;
 }
 .row{
-  width: 50%;
+  width: 100%;
   min-height: 1px;
-  float: left;
   position: relative;
   display: inline-block;
+  float: left;
 }.row ul {
   margin: 0 20px 0 0 !important;
   text-align: left !important;
   padding: 0;
 }.row ul li{
   list-style: none !important;
-  
+  width: 48%;
+  margin: 0 1%;
+  display: inline-block;
+  float: left;
 }.row ul li em{
   display: block;
   margin-bottom: 15px;
@@ -37,13 +40,26 @@
 .row ul li.html div span { background: #d85839; width: 90%; }
 .row ul li.css div span { background: #2874b4; width: 90%; }
 .row ul li.bootstrap div span { background: #51407d; width: 95%; }
-.row ul li.javascript div span { background: #f7de3e; width: 40%; }
+.row ul li.javascript div span { background: #f7de3e; width: 70%; }
 .row ul li.materialize div span { background: #ed6f75; width: 95%; }
 .row ul li.photoshop div span { background: #88bcfb; width: 90%; }
 .row ul li.illustrator div span { background: #f7c163; width: 100% }
 .row ul li.indesing div span { background: #d75ba6; width: 90%; }
 .row ul li.jquery div span { width: 40%; background: #1e69aa; }
 .row ul li.npm div span { width: 85%; background: #cb3837; }
+.row ul li.react div span { width: 70%; background: #60dbfa; }
+.row ul li.github div span { width: 80%; background: #ee5035; }
+.row ul li.sass div span { width: 100%; background: #cf649a; }
+.row ul li.python div span { width: 20%; background: #3570a3; }
+
+text {
+  filter: url(#filter);
+  fill: white;
+  font-family: 'Share Tech Mono', sans-serif;
+  font-size: 90px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .animated {
   -webkit-animation-duration: 5s;
@@ -76,5 +92,12 @@
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+  }
+}
+
+@media  (max-width: 600px) {
+  .row ul li{
+    width: 100%;
+    margin: 0;
   }
 }
